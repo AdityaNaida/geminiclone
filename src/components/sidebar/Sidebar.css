@@ -1,0 +1,164 @@
+.sidebar {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #f0f4f9;
+  width: auto;
+  padding: 30px 10px;
+  position: relative;
+}
+.sidebar img {
+  width: 20px;
+}
+.menu_back {
+  padding: 8px 10px;
+  border-radius: 50%;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+.menu_back:hover {
+  background-color: #dce1e7;
+}
+.menu_back > img {
+  vertical-align: middle;
+  height: 17px;
+  width: 17px;
+}
+
+.hover__text {
+  position: absolute;
+  top: 11%;
+  background: #1c1c1cde;
+  color: #fff;
+  left: 10%;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  opacity: 0;
+  transition: all ease 0.5s;
+  text-wrap: nowrap;
+}
+.menu_back:hover + .hover__text {
+  opacity: 1;
+}
+.menu_back:hover {
+  background-color: #dce1e7;
+}
+
+.new-chat {
+  margin-top: 3em;
+  display: flex;
+  width: 60%;
+  font-size: 0.9em;
+  align-items: center;
+  background-color: #e5eaf1;
+  justify-content: center;
+  padding: 10px 14px;
+  cursor: pointer;
+  gap: 10px;
+  border-radius: 100px;
+  color: #9a9dcb;
+}
+.new-chat > img {
+  height: 20px;
+  width: 15px;
+}
+.new-chat > p {
+  text-wrap: nowrap;
+}
+.recent {
+  margin-top: 2em;
+}
+.recent-title {
+  font-size: 0.9em;
+  margin-bottom: 1em;
+}
+
+.newChat {
+  position: absolute;
+  top: 22%;
+  background: #1c1c1cde;
+  color: #fff;
+  left: 10%;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  opacity: 0;
+  transition: all ease 0.5s;
+  text-wrap: nowrap;
+}
+.new-chat:hover + .newChat {
+  opacity: 1;
+}
+.recent-entry {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all ease 0.5s;
+  padding: 8px 15px;
+  margin: 0.5em 0em;
+  position: relative;
+}
+.recent-entry img {
+  height: 25px;
+  width: 25px;
+}
+.recent-entry:hover {
+  background: #dce1e7;
+}
+.recent-entry > p {
+  font-size: 0.9em;
+  flex: 1;
+  text-wrap: nowrap;
+}
+.recent-entry > p + span {
+  opacity: 0;
+}
+.recent-entry:hover > span {
+  opacity: 1;
+}
+.bottom {
+  position: relative;
+}
+.bottom-item + span {
+  position: absolute;
+  background: #1c1c1cde;
+  color: #fff;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  transition: all ease 0.5s;
+  left: 105%;
+
+  /* top: 0%; */
+}
+.help {
+  top: 10%;
+  opacity: 0;
+}
+.activity {
+  top: 45%;
+  opacity: 0;
+}
+.settings {
+  top: 80%;
+  opacity: 0;
+}
+.bottom-item:hover + .help,
+.bottom-item:hover + .activity,
+.bottom-item:hover + .settings {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 767px) {
+  .sidebar {
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+    left: -100%;
+  }
+}

@@ -1,0 +1,241 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+.header {
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.header > p {
+  font-size: 1.2em;
+  color: #282828;
+}
+.header > img {
+  border-radius: 50%;
+}
+.main {
+  width: 70%;
+  margin: auto;
+  height: 72vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+}
+.main::-webkit-scrollbar {
+  display: none;
+  width: 10px;
+}
+.main::-webkit-scrollbar-thumb {
+  background-color: #1c1c1c3b;
+  border-radius: 10px;
+}
+.welcome > p {
+  font-size: 3.5em;
+  font-weight: 500;
+  color: #c4c7c5;
+  line-height: 1.1;
+  margin-right: 1.9em;
+}
+.welcome > p > span {
+  background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.suggestPrompts {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(23%, 2fr));
+  grid-auto-flow: column;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  transition: all ease 0.5s;
+  gap: 10px;
+  margin-top: 2em;
+}
+.suggestPrompts > div {
+  padding: 10px;
+  background-color: #f0f4f9;
+  border-radius: 10px;
+  height: 200px;
+  position: relative;
+  transition: all ease 0.5s;
+}
+.suggestPrompts > div:hover {
+  cursor: pointer;
+  background-color: #dfe4ea;
+}
+.suggestPrompts > div > span {
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  padding: 11px 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  right: 10px;
+  bottom: 10px;
+}
+.suggestPrompts > div > span > img {
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+}
+
+.promptsContainer {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0%;
+  left: 23%;
+  width: 60%;
+  padding: 10px;
+  height: auto;
+}
+.prompt {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.prompt > input[type="text"] {
+  display: block;
+  width: 80%;
+  background-color: #f0f4f9;
+  border: none;
+  font-size: 0.9em;
+  padding: 15px;
+  border-radius: 100px 0px 0px 100px;
+  outline: none;
+}
+
+.prompt > div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 20%;
+  padding: 10px 15px;
+  background-color: #f0f4f9;
+  border-radius: 0px 100px 100px 0px;
+}
+.prompt > div > img {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+.prompt + p {
+  font-size: 0.7em;
+  text-align: center;
+  color: #282828;
+  margin: 0.3em 0em;
+}
+.prompt + p > a {
+  color: #282828;
+}
+.promptResult {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.result_Heading,
+.promptResponse {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin: 0.5em 0em;
+}
+.result_Heading > img {
+  border-radius: 50%;
+}
+.promptResponse > img {
+  height: 30px;
+  width: 30px;
+}
+.outPutt,
+.loader {
+  width: 80%;
+}
+.rotatingImg {
+  animation: rotation 6s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.loader > hr {
+  border-radius: 4px;
+  border: none;
+  background-color: #f6f7f8;
+  background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
+  background-size: 800px 50px;
+  height: 20px;
+  animation: loader 3s infinite linear;
+}
+
+@keyframes loader {
+  0% {
+    background-position: -800px 0px;
+  }
+  100% {
+    background-position: 800px 0px;
+  }
+}
+.outPutt > p {
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.9;
+}
+.mobile_menu {
+  display: none;
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 767px) {
+  .main {
+    width: 100%;
+    padding: 10px;
+  }
+  .promptsContainer {
+    left: 0%;
+    width: 100%;
+  }
+  .prompt > input[type="text"] {
+    width: 60%;
+  }
+  .prompt > div {
+    width: 40%;
+  }
+  /* .mobile_menu {
+    display: inline-block;
+  } */
+  .welcome > p {
+    font-size: 2em;
+  }
+  .suggestPrompts {
+    display: flex;
+  }
+  .suggestPrompts::-webkit-scrollbar {
+    display: none;
+  }
+  .suggestPrompts > div {
+    height: 150px;
+    min-width: 50%;
+  }
+}
