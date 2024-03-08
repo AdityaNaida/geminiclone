@@ -7,7 +7,7 @@ import "./MainContainer.css";
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/Context";
 
-const MainContainer = () => {
+const MainContainer = ({ controller }) => {
   const {
     previousPrompt,
     setPreviousPrompt,
@@ -19,6 +19,7 @@ const MainContainer = () => {
     resultData,
     input,
     setInput,
+    setShowResult,
   } = useContext(Context);
 
   //   const [onInputed, setOnInputed] = useState(false);
@@ -30,14 +31,31 @@ const MainContainer = () => {
   //       setOnInputed(false);
   //     }
   //   };
+  const newChat = () => {
+    setShowResult(false);
+  };
   return (
     <>
       <div className="container">
         <div className="header">
           <p>
-            <img src={assets.menu_icon} className="mobile_menu" />
+            <img
+              src={assets.menu_icon}
+              className="mobile_menu"
+              onClick={controller}
+            />
             Gemini clone
           </p>
+          {showResult ? (
+            <span className="plusNew" onClick={newChat}>
+              <img src={assets.plus_icon} />
+            </span>
+          ) : (
+            <span className="plusNew" onClick={newChat}>
+              <img src={assets.history_icon} />
+            </span>
+          )}
+
           <img src={assets.me} alt="" />
         </div>
         <div className="main">

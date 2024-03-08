@@ -1,4 +1,5 @@
-.sidebar {
+.sidebar,
+.sidebar2 {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -49,11 +50,11 @@
 .new-chat {
   margin-top: 3em;
   display: flex;
-  width: 60%;
+  width: 100%;
   font-size: 0.9em;
   align-items: center;
   background-color: #e5eaf1;
-  justify-content: center;
+  justify-content: space-around;
   padding: 10px 14px;
   cursor: pointer;
   gap: 10px;
@@ -114,7 +115,11 @@
   font-size: 0.9em;
   flex: 1;
   text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
 }
+
 .recent-entry > p + span {
   opacity: 0;
 }
@@ -156,9 +161,29 @@
 
 @media only screen and (max-width: 767px) {
   .sidebar {
+    display: none;
+  }
+  .sidebar2 {
+    width: 85%;
     position: fixed;
-    z-index: 9999;
-    top: 0px;
-    left: -100%;
+    top: 0%;
+    left: 0%;
+    animation: pop 0.5s ease 0s 1 forwards;
+    z-index: 9;
+  }
+  .top > .recent {
+    margin-top: 3em;
+  }
+  .recent-title {
+    padding-left: 15px;
+  }
+
+  @keyframes pop {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 0%;
+    }
   }
 }
