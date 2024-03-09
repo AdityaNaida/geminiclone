@@ -138,8 +138,6 @@
   font-size: 0.8em;
   transition: all ease 0.5s;
   left: 105%;
-
-  /* top: 0%; */
 }
 .help {
   top: 10%;
@@ -162,6 +160,15 @@
 @media only screen and (max-width: 767px) {
   .sidebar {
     display: none;
+  }
+  .sidebar2 {
+    justify-content: center;
+  }
+  .sidebar2 > .top {
+    flex: 1;
+  }
+  .sidebar2 > .bottom {
+    margin-bottom: 2em;
   }
   .sidebar2 {
     width: 85%;

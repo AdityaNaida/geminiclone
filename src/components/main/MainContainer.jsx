@@ -1,5 +1,5 @@
 //libraries
-import { useContext, useState } from "react";
+import { useContext } from "react";
 //styles
 import "./MainContainer.css";
 
@@ -21,16 +21,6 @@ const MainContainer = ({ controller }) => {
     setInput,
     setShowResult,
   } = useContext(Context);
-
-  //   const [onInputed, setOnInputed] = useState(false);
-  //   const inputHandler = () => {
-  //     setOnInputed(true);
-  //   };
-  //   const inputDefaultHandler = (event) => {
-  //     if (event.target.value === "") {
-  //       setOnInputed(false);
-  //     }
-  //   };
   const newChat = () => {
     setShowResult(false);
   };
@@ -83,13 +73,13 @@ const MainContainer = ({ controller }) => {
                 <div>
                   <p>List power words for my resume that show teamwork</p>
                   <span>
-                    <img src={assets.message_icon} alt="" />
+                    <img src={assets.draw} alt="" />
                   </span>
                 </div>
                 <div>
                   <p>Learn how to create custom hooks in React.js</p>
                   <span>
-                    <img src={assets.code_icon} alt="" />
+                    <img src={assets.draw} alt="" />
                   </span>
                 </div>
               </div>
@@ -140,7 +130,9 @@ const MainContainer = ({ controller }) => {
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
-              <img src={assets.send_icon} alt="" onClick={() => onSent()} />
+              {input.length > 0 && (
+                <img src={assets.send_icon} alt="" onClick={() => onSent()} />
+              )}
             </div>
           </div>
           <p>

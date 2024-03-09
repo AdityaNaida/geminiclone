@@ -1,20 +1,18 @@
-import history_icon from "./history_icon.png";
-import menu_icon from "./menu_icon.png";
+import history_icon from "./history.svg";
+import menu_icon from "./menu.svg";
 import plus_icon from "./plus_icon.png";
-import question_icon from "./question_icon.png";
-import setting_icon from "./setting_icon.png";
-import bulb_icon from "./bulb_icon.png";
-import compass_icon from "./compass_icon.png";
-import gallery_icon from "./gallery_icon.png";
-import mic_icon from "./mic_icon.png";
-import user_icon from "./user_icon.png";
-import youtube_icon from "./youtube_icon.png";
+import question_icon from "./question.svg";
+import setting_icon from "./settings.svg";
+import bulb_icon from "./bulb.svg";
+import compass_icon from "./compass.svg";
+import gallery_icon from "./gallery.svg";
+import mic_icon from "./mic.svg";
 import message_icon from "./message_icon.png";
-import code_icon from "./code_icon.png";
-import send_icon from "./send_icon.png";
+import send_icon from "./send.svg";
 import gemini_icon from "./gemini-icon.svg";
 import more from "./more.svg";
 import me from "./me.png";
+import draw from "./draw.svg";
 
 export const assets = {
   history_icon,
@@ -26,12 +24,10 @@ export const assets = {
   compass_icon,
   gallery_icon,
   mic_icon,
-  user_icon,
-  youtube_icon,
   message_icon,
-  code_icon,
   send_icon,
   gemini_icon,
   more,
   me,
+  draw,
 };
